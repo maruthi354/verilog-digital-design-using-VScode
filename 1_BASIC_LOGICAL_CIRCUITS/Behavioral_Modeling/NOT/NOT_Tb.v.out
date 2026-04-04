@@ -1,0 +1,55 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01103540 .scope module, "NOT_Tb" "NOT_Tb" 2 2;
+ .timescale 0 0;
+v011015F0_0 .var "A", 0 0;
+v01101648_0 .net "F", 0 0, v01104F80_0; 1 drivers
+S_011035C8 .scope module, "DUT" "NOT_Gate" 2 7, 3 1, S_01103540;
+ .timescale 0 0;
+v01103650_0 .net "A", 0 0, v011015F0_0; 1 drivers
+v01104F80_0 .var "F", 0 0;
+E_011088C0 .event edge, v01103650_0;
+    .scope S_011035C8;
+T_0 ;
+    %wait E_011088C0;
+    %load/v 8, v01103650_0, 1;
+    %jmp/0  T_0.0, 8;
+    %mov 9, 0, 1;
+    %jmp/1  T_0.2, 8;
+T_0.0 ; End of true expr.
+    %jmp/0  T_0.1, 8;
+ ; End of false expr.
+    %blend  9, 1, 1; Condition unknown.
+    %jmp  T_0.2;
+T_0.1 ;
+    %mov 9, 1, 1; Return false value
+T_0.2 ;
+    %set/v v01104F80_0, 9, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_01103540;
+T_1 ;
+    %vpi_call 2 10 "$monitor", " %b |  %b", v011015F0_0, v01101648_0;
+    %vpi_call 2 11 "$display", " A | out";
+    %vpi_call 2 12 "$display", "--------";
+    %set/v v011015F0_0, 0, 1;
+    %delay 5, 0;
+    %set/v v011015F0_0, 1, 1;
+    %delay 5, 0;
+    %set/v v011015F0_0, 2, 1;
+    %delay 5, 0;
+    %set/v v011015F0_0, 3, 1;
+    %delay 5, 0;
+    %vpi_call 2 17 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "NOT_Tb.v";
+    "./NOT_Gate.v";

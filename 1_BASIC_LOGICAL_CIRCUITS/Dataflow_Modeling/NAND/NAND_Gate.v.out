@@ -1,0 +1,19 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01252BE8 .scope module, "NAND_Gate" "NAND_Gate" 2 1;
+ .timescale 0 0;
+L_0125E830 .functor AND 1, C4<z>, C4<z>, C4<1>, C4<1>;
+L_0125E868 .functor NOT 1, L_0125E830, C4<0>, C4<0>, C4<0>;
+v01252C70_0 .net "A", 0 0, C4<z>; 0 drivers
+v01252CC8_0 .net "B", 0 0, C4<z>; 0 drivers
+v01253F10_0 .net "F", 0 0, L_0125E868; 1 drivers
+v01253F68_0 .net *"_s0", 0 0, L_0125E830; 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "NAND_Gate.v";

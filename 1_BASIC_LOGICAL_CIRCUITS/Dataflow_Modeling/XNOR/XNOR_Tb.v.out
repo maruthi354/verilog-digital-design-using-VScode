@@ -1,0 +1,84 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00A78130 .scope module, "XNOR_Tb" "XNOR_Tb" 2 2;
+ .timescale 0 0;
+v00A71650_0 .var "A", 0 0;
+v00A716A8_0 .var "B", 0 0;
+v00A71700_0 .net "F", 0 0, L_00A73638; 1 drivers
+v00A734F8_0 .var/i "i", 31 0;
+v00A73550_0 .var/i "j", 31 0;
+v00A735A8_0 .var "val", 3 0;
+S_00A784E8 .scope module, "DUT" "XNOR_Gate" 2 9, 3 1, S_00A78130;
+ .timescale 0 0;
+L_011F3430 .functor XOR 1, v00A71650_0, v00A716A8_0, C4<0>, C4<0>;
+L_00A73638 .functor NOT 1, L_011F3430, C4<0>, C4<0>, C4<0>;
+v011F2E68_0 .net "A", 0 0, v00A71650_0; 1 drivers
+v011F3380_0 .net "B", 0 0, v00A716A8_0; 1 drivers
+v011F33D8_0 .alias "F", 0 0, v00A71700_0;
+v00A715F8_0 .net *"_s0", 0 0, L_011F3430; 1 drivers
+    .scope S_00A78130;
+T_0 ;
+    %ix/load 0, 0, 0;
+    %set/x0 v00A735A8_0, 0, 1;
+    %ix/load 0, 1, 0;
+    %set/x0 v00A735A8_0, 1, 1;
+    %ix/load 0, 2, 0;
+    %set/x0 v00A735A8_0, 2, 1;
+    %ix/load 0, 3, 0;
+    %set/x0 v00A735A8_0, 3, 1;
+    %vpi_call 2 18 "$display", "XNOR|  0   1   x   z";
+    %vpi_call 2 19 "$display", "--------------------";
+    %set/v v00A734F8_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v00A734F8_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_0.1, 5;
+    %ix/getv/s 1, v00A734F8_0;
+    %jmp/1 T_0.2, 4;
+    %load/x1p 8, v00A735A8_0, 1;
+    %jmp T_0.3;
+T_0.2 ;
+    %mov 8, 2, 1;
+T_0.3 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v00A71650_0, 8, 1;
+    %vpi_call 2 23 "$write", " %b  | ", v00A71650_0;
+    %set/v v00A73550_0, 0, 32;
+T_0.4 ;
+    %load/v 8, v00A73550_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_0.5, 5;
+    %ix/getv/s 1, v00A73550_0;
+    %jmp/1 T_0.6, 4;
+    %load/x1p 8, v00A735A8_0, 1;
+    %jmp T_0.7;
+T_0.6 ;
+    %mov 8, 2, 1;
+T_0.7 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v00A716A8_0, 8, 1;
+    %delay 1, 0;
+    %vpi_call 2 26 "$write", " %b  ", v00A71700_0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v00A73550_0, 32;
+    %set/v v00A73550_0, 8, 32;
+    %jmp T_0.4;
+T_0.5 ;
+    %vpi_call 2 28 "$write", "\012";
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v00A734F8_0, 32;
+    %set/v v00A734F8_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "XNOR_Tb.v";
+    "./XNOR_Gate.v";

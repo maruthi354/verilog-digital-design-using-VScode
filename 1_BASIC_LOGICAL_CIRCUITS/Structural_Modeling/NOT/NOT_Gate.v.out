@@ -1,0 +1,16 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011B2C50 .scope module, "NOT_Gate" "NOT_Gate" 2 1;
+ .timescale 0 0;
+L_011B3E60 .functor NOT 1, C4<z>, C4<0>, C4<0>, C4<0>;
+v011B2CD8_0 .net "A", 0 0, C4<z>; 0 drivers
+v011B3E08_0 .net "F", 0 0, L_011B3E60; 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "NOT_Gate.v";

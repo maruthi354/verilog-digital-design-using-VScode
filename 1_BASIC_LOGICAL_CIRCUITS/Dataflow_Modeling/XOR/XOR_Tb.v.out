@@ -1,0 +1,82 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_012579C0 .scope module, "XOR_Tb" "XOR_Tb" 2 2;
+ .timescale 0 0;
+v012515F8_0 .var "A", 0 0;
+v01251650_0 .var "B", 0 0;
+v012516A8_0 .net "F", 0 0, L_01293320; 1 drivers
+v01251700_0 .var/i "i", 31 0;
+v012534D0_0 .var/i "j", 31 0;
+v01253528_0 .var "val", 3 0;
+S_01257AD0 .scope module, "DUT" "XOR_Gate" 2 9, 3 1, S_012579C0;
+ .timescale 0 0;
+L_01293320 .functor XOR 1, v012515F8_0, v01251650_0, C4<0>, C4<0>;
+v01292D88_0 .net "A", 0 0, v012515F8_0; 1 drivers
+v01293270_0 .net "B", 0 0, v01251650_0; 1 drivers
+v012932C8_0 .alias "F", 0 0, v012516A8_0;
+    .scope S_012579C0;
+T_0 ;
+    %ix/load 0, 0, 0;
+    %set/x0 v01253528_0, 0, 1;
+    %ix/load 0, 1, 0;
+    %set/x0 v01253528_0, 1, 1;
+    %ix/load 0, 2, 0;
+    %set/x0 v01253528_0, 2, 1;
+    %ix/load 0, 3, 0;
+    %set/x0 v01253528_0, 3, 1;
+    %vpi_call 2 18 "$display", " XOR|  0   1   x   z";
+    %vpi_call 2 19 "$display", "--------------------";
+    %set/v v01251700_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v01251700_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_0.1, 5;
+    %ix/getv/s 1, v01251700_0;
+    %jmp/1 T_0.2, 4;
+    %load/x1p 8, v01253528_0, 1;
+    %jmp T_0.3;
+T_0.2 ;
+    %mov 8, 2, 1;
+T_0.3 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v012515F8_0, 8, 1;
+    %vpi_call 2 23 "$write", " %b  | ", v012515F8_0;
+    %set/v v012534D0_0, 0, 32;
+T_0.4 ;
+    %load/v 8, v012534D0_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_0.5, 5;
+    %ix/getv/s 1, v012534D0_0;
+    %jmp/1 T_0.6, 4;
+    %load/x1p 8, v01253528_0, 1;
+    %jmp T_0.7;
+T_0.6 ;
+    %mov 8, 2, 1;
+T_0.7 ;
+; Save base=8 wid=1 in lookaside.
+    %set/v v01251650_0, 8, 1;
+    %delay 1, 0;
+    %vpi_call 2 26 "$write", " %b  ", v012516A8_0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v012534D0_0, 32;
+    %set/v v012534D0_0, 8, 32;
+    %jmp T_0.4;
+T_0.5 ;
+    %vpi_call 2 28 "$write", "\012";
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v01251700_0, 32;
+    %set/v v01251700_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "XOR_Tb.v";
+    "./XOR_Gate.v";
