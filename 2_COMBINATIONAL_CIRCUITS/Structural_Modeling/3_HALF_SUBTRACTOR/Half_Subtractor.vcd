@@ -1,0 +1,106 @@
+$date
+	Thu Apr 09 23:05:00 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Half_Subtractor_Tb $end
+$var wire 1 ! Borrow $end
+$var wire 1 " Diff $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var integer 32 % i [31:0] $end
+$var integer 32 & j [31:0] $end
+$var reg 4 ' val [3:0] $end
+$scope module DUT $end
+$var wire 1 ( A $end
+$var wire 1 ) B $end
+$var wire 1 ! Borrow $end
+$var wire 1 " Diff $end
+$var wire 1 * w0 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1*
+0)
+0(
+bzx10 '
+b0 &
+b0 %
+0$
+0#
+0"
+0!
+$end
+#5000
+1"
+1!
+1$
+1)
+b1 &
+#10000
+0!
+0*
+0$
+0)
+1#
+1(
+b1 %
+b0 &
+#15000
+0"
+1$
+1)
+b1 &
+#20000
+x"
+x*
+0$
+0)
+x#
+x(
+b10 %
+b0 &
+#25000
+x!
+1$
+1)
+b1 &
+#30000
+x$
+x)
+b10 &
+#35000
+z$
+z)
+b11 &
+#40000
+0!
+0$
+0)
+z#
+z(
+b11 %
+b0 &
+#45000
+x!
+1$
+1)
+b1 &
+#50000
+x$
+x)
+b10 &
+#55000
+z$
+z)
+b11 &
+#60000
+b100 %
+b100 &
+#65000

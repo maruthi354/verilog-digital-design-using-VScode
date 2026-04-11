@@ -1,0 +1,151 @@
+$date
+	Sun Apr 05 23:57:02 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Full_Adder_Tb $end
+$var wire 1 ! c_out $end
+$var wire 1 " sum $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % C_in $end
+$var integer 32 & i [31:0] $end
+$var integer 32 ' j [31:0] $end
+$var integer 32 ( k [31:0] $end
+$var reg 4 ) val [3:0] $end
+$scope module DUT $end
+$var wire 1 * A $end
+$var wire 1 + B $end
+$var wire 1 , c_in $end
+$var wire 1 ! c_out $end
+$var wire 1 " sum $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0,
+0+
+0*
+bzx10 )
+b0 (
+b0 '
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#5000
+1"
+1%
+1,
+b1 (
+#10000
+0%
+0,
+1$
+1+
+b1 '
+b0 (
+#15000
+1!
+0"
+1%
+1,
+b1 (
+#20000
+0!
+1"
+0%
+0,
+0$
+0+
+1#
+1*
+b1 &
+b0 '
+b0 (
+#25000
+1!
+0"
+1%
+1,
+b1 (
+#30000
+0%
+0,
+1$
+1+
+b1 '
+b0 (
+#35000
+1"
+1%
+1,
+b1 (
+#40000
+0!
+x"
+0%
+0,
+x$
+x+
+0#
+0*
+b0 &
+b10 '
+b0 (
+#45000
+x!
+1%
+1,
+b1 (
+#50000
+0!
+0%
+0,
+z$
+z+
+b11 '
+b0 (
+#55000
+x!
+1%
+1,
+b1 (
+#60000
+0%
+0,
+x$
+x+
+1#
+1*
+b1 &
+b10 '
+b0 (
+#65000
+1%
+1,
+b1 (
+#70000
+0%
+0,
+z$
+z+
+b11 '
+b0 (
+#75000
+1%
+1,
+b1 (
+#80000
+b10 &
+b100 '
+b10 (
+#85000
