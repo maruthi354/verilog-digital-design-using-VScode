@@ -1,0 +1,79 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011A3D90 .scope module, "Priority_Encoder_4X2_Tb" "Priority_Encoder_4X2_Tb" 2 3;
+ .timescale 0 0;
+v011C4DA8_0 .net "A0", 0 0, L_00A291C8; 1 drivers
+v011C5220_0 .net "A1", 0 0, L_00A2EF08; 1 drivers
+v011C4CF8_0 .var "I", 3 0;
+v011C4F60_0 .net "V", 0 0, L_011C5488; 1 drivers
+S_011A36A8 .scope module, "dut" "Priority_Encoder_4X2" 2 8, 3 1, S_011A3D90;
+ .timescale 0 0;
+L_00A2EF08 .functor OR 1, L_011C4E00, L_011C5328, C4<0>, C4<0>;
+L_00A24008 .functor NOT 1, L_011C4EB0, C4<0>, C4<0>, C4<0>;
+L_00A29120 .functor AND 1, L_011C5380, L_00A24008, C4<1>, C4<1>;
+L_00A291C8 .functor OR 1, L_011C50C0, L_00A29120, C4<0>, C4<0>;
+L_011C57D0 .functor OR 1, L_011C4F08, L_011C5118, C4<0>, C4<0>;
+L_011C5450 .functor OR 1, L_011C57D0, L_011C5068, C4<0>, C4<0>;
+L_011C5488 .functor OR 1, L_011C5450, L_011C4D50, C4<0>, C4<0>;
+v011A2F78_0 .alias "A0", 0 0, v011C4DA8_0;
+v00A23F00_0 .alias "A1", 0 0, v011C5220_0;
+v00A23F58_0 .net "I", 3 0, v011C4CF8_0; 1 drivers
+v00A23FB0_0 .alias "V", 0 0, v011C4F60_0;
+v00A21500_0 .net *"_s1", 0 0, L_011C4E00; 1 drivers
+v00A21558_0 .net *"_s11", 0 0, L_011C4EB0; 1 drivers
+v00A215B0_0 .net *"_s12", 0 0, L_00A24008; 1 drivers
+v00A2EE00_0 .net *"_s14", 0 0, L_00A29120; 1 drivers
+v00A2EE58_0 .net *"_s19", 0 0, L_011C4F08; 1 drivers
+v00A2EEB0_0 .net *"_s21", 0 0, L_011C5118; 1 drivers
+v011C4CA0_0 .net *"_s22", 0 0, L_011C57D0; 1 drivers
+v011C5010_0 .net *"_s25", 0 0, L_011C5068; 1 drivers
+v011C4E58_0 .net *"_s26", 0 0, L_011C5450; 1 drivers
+v011C4C48_0 .net *"_s29", 0 0, L_011C4D50; 1 drivers
+v011C5278_0 .net *"_s3", 0 0, L_011C5328; 1 drivers
+v011C52D0_0 .net *"_s7", 0 0, L_011C50C0; 1 drivers
+v011C51C8_0 .net *"_s9", 0 0, L_011C5380; 1 drivers
+L_011C4E00 .part v011C4CF8_0, 2, 1;
+L_011C5328 .part v011C4CF8_0, 3, 1;
+L_011C50C0 .part v011C4CF8_0, 3, 1;
+L_011C5380 .part v011C4CF8_0, 1, 1;
+L_011C4EB0 .part v011C4CF8_0, 2, 1;
+L_011C4F08 .part v011C4CF8_0, 0, 1;
+L_011C5118 .part v011C4CF8_0, 1, 1;
+L_011C5068 .part v011C4CF8_0, 2, 1;
+L_011C4D50 .part v011C4CF8_0, 3, 1;
+    .scope S_011A3D90;
+T_0 ;
+    %vpi_call 2 11 "$monitor", $time, " I=%b, A1=%b, A0=%b, V=%b", v011C4CF8_0, v011C5220_0, v011C4DA8_0, v011C4F60_0;
+    %vpi_call 2 12 "$dumpfile", "Priority_Encoder_4X2.vcd";
+    %vpi_call 2 13 "$dumpvars", 1'sb0, S_011A3D90;
+    %end;
+    .thread T_0;
+    .scope S_011A3D90;
+T_1 ;
+    %set/v v011C4CF8_0, 0, 4;
+    %delay 10, 0;
+    %movi 8, 1, 4;
+    %set/v v011C4CF8_0, 8, 4;
+    %delay 10, 0;
+    %movi 8, 2, 4;
+    %set/v v011C4CF8_0, 8, 4;
+    %delay 10, 0;
+    %movi 8, 4, 4;
+    %set/v v011C4CF8_0, 8, 4;
+    %delay 10, 0;
+    %movi 8, 8, 4;
+    %set/v v011C4CF8_0, 8, 4;
+    %delay 10, 0;
+    %vpi_call 2 22 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Priority_Encoder_4X2_Tb.v";
+    "./Priority_Encoder_4x2.v";

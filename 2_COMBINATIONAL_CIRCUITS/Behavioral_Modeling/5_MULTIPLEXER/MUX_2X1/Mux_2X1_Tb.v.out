@@ -1,0 +1,110 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00A41610 .scope module, "Mux_2X1_Tb" "Mux_2X1_Tb" 2 4;
+ .timescale -9 -12;
+v00A43790_0 .var "I0", 0 0;
+v00A437E8_0 .var "I1", 0 0;
+v00A4C700_0 .var "S", 0 0;
+v00A4C758_0 .net "Y", 0 0, v00A43738_0; 1 drivers
+S_00A41698 .scope module, "uut" "Mux_2X1" 2 9, 3 1, S_00A41610;
+ .timescale -9 -12;
+v00A41720_0 .net "I0", 0 0, v00A43790_0; 1 drivers
+v00A4CF48_0 .net "I1", 0 0, v00A437E8_0; 1 drivers
+v00A436E0_0 .net "S", 0 0, v00A4C700_0; 1 drivers
+v00A43738_0 .var "Y", 0 0;
+E_00A4E2D0 .event edge, v00A436E0_0, v00A4CF48_0, v00A41720_0;
+    .scope S_00A41698;
+T_0 ;
+    %wait E_00A4E2D0;
+    %load/v 8, v00A436E0_0, 1;
+    %jmp/0  T_0.0, 8;
+    %load/v 9, v00A4CF48_0, 1;
+    %jmp/1  T_0.2, 8;
+T_0.0 ; End of true expr.
+    %load/v 10, v00A41720_0, 1;
+    %jmp/0  T_0.1, 8;
+ ; End of false expr.
+    %blend  9, 10, 1; Condition unknown.
+    %jmp  T_0.2;
+T_0.1 ;
+    %mov 9, 10, 1; Return false value
+T_0.2 ;
+    %ix/load 0, 1, 0;
+    %assign/v0 v00A43738_0, 0, 9;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_00A41610;
+T_1 ;
+    %vpi_call 2 12 "$dumpfile", "Mux_2X1.vcd";
+    %vpi_call 2 13 "$dumpvars", 1'sb0, S_00A41610;
+    %end;
+    .thread T_1;
+    .scope S_00A41610;
+T_2 ;
+    %vpi_call 2 18 "$display", "-------------";
+    %vpi_call 2 19 "$display", "I0| I1| S | Y";
+    %vpi_call 2 20 "$display", "-------------";
+    %vpi_call 2 21 "$monitor", "%b | %b | %b | %b", v00A43790_0, v00A437E8_0, v00A4C700_0, v00A4C758_0;
+    %set/v v00A43790_0, 0, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 0, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 0, 1;
+    %set/v v00A437E8_0, 1, 1;
+    %set/v v00A4C700_0, 0, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 0, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 1, 1;
+    %set/v v00A4C700_0, 0, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 0, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 1, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 0, 1;
+    %set/v v00A437E8_0, 1, 1;
+    %set/v v00A4C700_0, 1, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 1, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 1, 1;
+    %set/v v00A4C700_0, 1, 1;
+    %delay 10000, 0;
+    %vpi_call 2 31 "$display", "-------------";
+    %set/v v00A43790_0, 2, 1;
+    %set/v v00A437E8_0, 3, 1;
+    %set/v v00A4C700_0, 1, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 2, 1;
+    %set/v v00A437E8_0, 3, 1;
+    %set/v v00A4C700_0, 0, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 3, 1;
+    %delay 10000, 0;
+    %set/v v00A43790_0, 1, 1;
+    %set/v v00A437E8_0, 0, 1;
+    %set/v v00A4C700_0, 2, 1;
+    %delay 10000, 0;
+    %vpi_call 2 36 "$display", "-------------";
+    %vpi_call 2 37 "$finish";
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Mux_2X1_Tb.v";
+    "./Mux_2X1.v";

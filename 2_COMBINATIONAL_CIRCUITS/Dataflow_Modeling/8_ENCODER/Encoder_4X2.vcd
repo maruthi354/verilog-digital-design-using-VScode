@@ -1,0 +1,59 @@
+$date
+	Tue Apr 14 13:47:49 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Encoder_4X2_Tb $end
+$var wire 1 ! A0 $end
+$var wire 1 " A1 $end
+$var reg 1 # D0 $end
+$var reg 1 $ D1 $end
+$var reg 1 % D2 $end
+$var reg 1 & D3 $end
+$scope module dut $end
+$var wire 1 ! A0 $end
+$var wire 1 " A1 $end
+$var wire 1 ' D0 $end
+$var wire 1 ( D1 $end
+$var wire 1 ) D2 $end
+$var wire 1 * D3 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+0(
+1'
+0&
+0%
+0$
+1#
+0"
+0!
+$end
+#10
+1!
+1$
+1(
+0#
+0'
+#20
+1"
+0!
+1%
+1)
+0$
+0(
+#30
+1!
+1&
+1*
+0%
+0)
+#40

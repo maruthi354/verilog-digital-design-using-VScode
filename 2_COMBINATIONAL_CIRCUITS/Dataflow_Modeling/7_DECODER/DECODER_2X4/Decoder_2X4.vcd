@@ -1,0 +1,47 @@
+$date
+	Mon Apr 13 19:33:29 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Decoder_2X4_Tb $end
+$var wire 4 ! I [0:3] $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module dut $end
+$var wire 1 $ A $end
+$var wire 1 % B $end
+$var wire 4 & I [0:3] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 &
+0%
+0$
+0#
+0"
+b1000 !
+$end
+#10
+b100 !
+b100 &
+1#
+1%
+#20
+b10 !
+b10 &
+0#
+0%
+1"
+1$
+#30
+b1 !
+b1 &
+1#
+1%
+#40

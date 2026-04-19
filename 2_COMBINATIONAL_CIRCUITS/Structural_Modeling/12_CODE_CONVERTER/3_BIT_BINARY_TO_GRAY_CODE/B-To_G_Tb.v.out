@@ -1,0 +1,77 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_012A3EF0 .scope module, "B_To_G_Tb" "B_To_G_Tb" 2 3;
+ .timescale 0 0;
+v012A8160_0 .var "I", 2 0;
+RS_01154004 .resolv tri, L_01175278, L_01174D50, L_011751C8, C4<zzz>;
+v011750C0_0 .net8 "O", 2 0, RS_01154004; 3 drivers
+S_012A3F78 .scope module, "dut" "B_To_G" 2 8, 3 1, S_012A3EF0;
+ .timescale 0 0;
+L_012A81B8 .functor BUF 1, L_011752D0, C4<0>, C4<0>, C4<0>;
+L_01175488 .functor XOR 1, L_01174C48, L_01175010, C4<0>, C4<0>;
+L_011754C0 .functor XOR 1, L_01174CF8, L_01175068, C4<0>, C4<0>;
+v012A92B0_0 .net "B", 2 0, v012A8160_0; 1 drivers
+v012A16B8_0 .alias "G", 2 0, v011750C0_0;
+v012A1710_0 .net *"_s0", 0 0, L_012A81B8; 1 drivers
+v012A1768_0 .net *"_s10", 0 0, L_011754C0; 1 drivers
+v012A17C0_0 .net *"_s13", 0 0, L_01174CF8; 1 drivers
+v012A7FA8_0 .net *"_s15", 0 0, L_01175068; 1 drivers
+v012A8000_0 .net *"_s3", 0 0, L_011752D0; 1 drivers
+v012A8058_0 .net *"_s4", 0 0, L_01175488; 1 drivers
+v012A80B0_0 .net *"_s7", 0 0, L_01174C48; 1 drivers
+v012A8108_0 .net *"_s9", 0 0, L_01175010; 1 drivers
+L_01175278 .part/pv L_012A81B8, 2, 1, 3;
+L_011752D0 .part v012A8160_0, 2, 1;
+L_01174D50 .part/pv L_01175488, 1, 1, 3;
+L_01174C48 .part v012A8160_0, 2, 1;
+L_01175010 .part v012A8160_0, 1, 1;
+L_011751C8 .part/pv L_011754C0, 0, 1, 3;
+L_01174CF8 .part v012A8160_0, 1, 1;
+L_01175068 .part v012A8160_0, 0, 1;
+    .scope S_012A3EF0;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "B_To_G.vcd";
+    %vpi_call 2 12 "$dumpvars", 1'sb0, S_012A3EF0;
+    %end;
+    .thread T_0;
+    .scope S_012A3EF0;
+T_1 ;
+    %vpi_call 2 17 "$display", "------------------------------";
+    %vpi_call 2 18 "$display", " I2 | I1 | I0 || Y2 | Y1 | Y0";
+    %vpi_call 2 19 "$display", "------------------------------";
+    %vpi_call 2 21 "$monitor", "  %b |  %b |  %b ||  %b |  %b | %b ", &PV<v012A8160_0, 2, 1>, &PV<v012A8160_0, 1, 1>, &PV<v012A8160_0, 0, 1>, &PV<v011750C0_0, 2, 1>, &PV<v011750C0_0, 1, 1>, &PV<v011750C0_0, 0, 1>;
+    %set/v v012A8160_0, 0, 3;
+    %delay 10, 0;
+    %movi 8, 1, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %movi 8, 2, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %movi 8, 3, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %movi 8, 4, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %movi 8, 5, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %movi 8, 6, 3;
+    %set/v v012A8160_0, 8, 3;
+    %delay 10, 0;
+    %set/v v012A8160_0, 1, 3;
+    %delay 10, 0;
+    %vpi_call 2 31 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "B-To_G_Tb.v";
+    "./B_To_G.v";

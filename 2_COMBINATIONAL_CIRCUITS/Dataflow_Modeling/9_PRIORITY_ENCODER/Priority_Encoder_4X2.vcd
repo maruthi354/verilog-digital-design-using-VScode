@@ -1,0 +1,48 @@
+$date
+	Fri Mar 06 12:31:36 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Priority_Encoder_4X2_Tb $end
+$var wire 1 ! A0 $end
+$var wire 1 " A1 $end
+$var wire 1 # V $end
+$var reg 4 $ I [3:0] $end
+$scope module dut $end
+$var wire 1 ! A0 $end
+$var wire 1 " A1 $end
+$var wire 4 % I [3:0] $end
+$var wire 1 # V $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b0 $
+0#
+0"
+0!
+$end
+#10
+1#
+b1 $
+b1 %
+#20
+1!
+b10 $
+b10 %
+#30
+0!
+1"
+b100 $
+b100 %
+#40
+1!
+b1000 $
+b1000 %
+#50

@@ -1,0 +1,77 @@
+$date
+	Mon Apr 13 19:34:29 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Decoder_3X8_Tb $end
+$var wire 8 ! I [0:7] $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$var reg 1 $ C $end
+$scope module dut $end
+$var wire 1 % A $end
+$var wire 1 & B $end
+$var wire 1 ' C $end
+$var wire 8 ( I [0:7] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10000000 (
+0'
+0&
+0%
+0$
+0#
+0"
+b10000000 !
+$end
+#10
+b1000000 !
+b1000000 (
+1$
+1'
+#20
+b100000 !
+b100000 (
+0$
+0'
+1#
+1&
+#30
+b10000 !
+b10000 (
+1$
+1'
+#40
+b1000 !
+b1000 (
+0$
+0'
+0#
+0&
+1"
+1%
+#50
+b100 !
+b100 (
+1$
+1'
+#60
+b10 !
+b10 (
+0$
+0'
+1#
+1&
+#70
+b1 !
+b1 (
+1$
+1'
+#80

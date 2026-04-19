@@ -1,0 +1,138 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011DDFE8 .scope module, "Decoder_3X8_Tb" "Decoder_3X8_Tb" 2 3;
+ .timescale 0 0;
+v01119288_0 .var "A", 0 0;
+v011192E0_0 .var "B", 0 0;
+v01119390_0 .var "C", 0 0;
+RS_010F4034/0/0 .resolv tri, L_01119498, L_01119548, L_011195F8, L_01119650;
+RS_010F4034/0/4 .resolv tri, L_01118E10, L_011196A8, L_01118DB8, L_01119B78;
+RS_010F4034 .resolv tri, RS_010F4034/0/0, RS_010F4034/0/4, C4<zzzzzzzz>, C4<zzzzzzzz>;
+v01118F18_0 .net8 "I", 0 7, RS_010F4034; 8 drivers
+S_011DE648 .scope module, "dut" "Decoder_3X8" 2 8, 3 1, S_011DDFE8;
+ .timescale 0 0;
+L_010F18D8 .functor NOT 1, v01119288_0, C4<0>, C4<0>, C4<0>;
+L_010F1948 .functor NOT 1, v011192E0_0, C4<0>, C4<0>, C4<0>;
+L_011D15F0 .functor AND 1, L_010F18D8, L_010F1948, C4<1>, C4<1>;
+L_01119E18 .functor NOT 1, v01119390_0, C4<0>, C4<0>, C4<0>;
+L_01119F68 .functor AND 1, L_011D15F0, L_01119E18, C4<1>, C4<1>;
+L_01119C90 .functor NOT 1, v01119288_0, C4<0>, C4<0>, C4<0>;
+L_01119D38 .functor NOT 1, v011192E0_0, C4<0>, C4<0>, C4<0>;
+L_01119CC8 .functor AND 1, L_01119C90, L_01119D38, C4<1>, C4<1>;
+L_01119DA8 .functor AND 1, L_01119CC8, v01119390_0, C4<1>, C4<1>;
+L_01119EF8 .functor NOT 1, v01119288_0, C4<0>, C4<0>, C4<0>;
+L_01119FA0 .functor AND 1, L_01119EF8, v011192E0_0, C4<1>, C4<1>;
+L_0111A500 .functor NOT 1, v01119390_0, C4<0>, C4<0>, C4<0>;
+L_0111A6C0 .functor AND 1, L_01119FA0, L_0111A500, C4<1>, C4<1>;
+L_0111A5A8 .functor NOT 1, v01119288_0, C4<0>, C4<0>, C4<0>;
+L_0111A650 .functor AND 1, L_0111A5A8, v011192E0_0, C4<1>, C4<1>;
+L_0111A570 .functor AND 1, L_0111A650, v01119390_0, C4<1>, C4<1>;
+L_0111A490 .functor NOT 1, v011192E0_0, C4<0>, C4<0>, C4<0>;
+L_0111A420 .functor AND 1, v01119288_0, L_0111A490, C4<1>, C4<1>;
+L_0111A730 .functor NOT 1, v01119390_0, C4<0>, C4<0>, C4<0>;
+L_0111A4C8 .functor AND 1, L_0111A420, L_0111A730, C4<1>, C4<1>;
+L_0111A1F0 .functor NOT 1, v011192E0_0, C4<0>, C4<0>, C4<0>;
+L_0111A0A0 .functor AND 1, v01119288_0, L_0111A1F0, C4<1>, C4<1>;
+L_0111A228 .functor AND 1, L_0111A0A0, v01119390_0, C4<1>, C4<1>;
+L_0111A110 .functor AND 1, v01119288_0, v011192E0_0, C4<1>, C4<1>;
+L_0111A458 .functor NOT 1, v01119390_0, C4<0>, C4<0>, C4<0>;
+L_0111A340 .functor AND 1, L_0111A110, L_0111A458, C4<1>, C4<1>;
+L_0111A180 .functor AND 1, v01119288_0, v011192E0_0, C4<1>, C4<1>;
+L_0111A7A0 .functor AND 1, L_0111A180, v01119390_0, C4<1>, C4<1>;
+v011D7E80_0 .net "A", 0 0, v01119288_0; 1 drivers
+v011D8198_0 .net "B", 0 0, v011192E0_0; 1 drivers
+v011D8140_0 .net "C", 0 0, v01119390_0; 1 drivers
+v011D7FE0_0 .alias "I", 0 7, v01118F18_0;
+v011D7ED8_0 .net *"_s10", 0 0, L_01119F68; 1 drivers
+v011D81F0_0 .net *"_s14", 0 0, L_01119C90; 1 drivers
+v011D82A0_0 .net *"_s16", 0 0, L_01119D38; 1 drivers
+v011D8038_0 .net *"_s18", 0 0, L_01119CC8; 1 drivers
+v011D8090_0 .net *"_s2", 0 0, L_010F18D8; 1 drivers
+v011D7B68_0 .net *"_s20", 0 0, L_01119DA8; 1 drivers
+v011D7BC0_0 .net *"_s24", 0 0, L_01119EF8; 1 drivers
+v01119338_0 .net *"_s26", 0 0, L_01119FA0; 1 drivers
+v01118FC8_0 .net *"_s28", 0 0, L_0111A500; 1 drivers
+v011195A0_0 .net *"_s30", 0 0, L_0111A6C0; 1 drivers
+v011194F0_0 .net *"_s34", 0 0, L_0111A5A8; 1 drivers
+v01119078_0 .net *"_s36", 0 0, L_0111A650; 1 drivers
+v01119020_0 .net *"_s38", 0 0, L_0111A570; 1 drivers
+v011193E8_0 .net *"_s4", 0 0, L_010F1948; 1 drivers
+v01118C58_0 .net *"_s42", 0 0, L_0111A490; 1 drivers
+v01118CB0_0 .net *"_s44", 0 0, L_0111A420; 1 drivers
+v01119700_0 .net *"_s46", 0 0, L_0111A730; 1 drivers
+v01119440_0 .net *"_s48", 0 0, L_0111A4C8; 1 drivers
+v01119180_0 .net *"_s52", 0 0, L_0111A1F0; 1 drivers
+v011190D0_0 .net *"_s54", 0 0, L_0111A0A0; 1 drivers
+v01119230_0 .net *"_s56", 0 0, L_0111A228; 1 drivers
+v01118D08_0 .net *"_s6", 0 0, L_011D15F0; 1 drivers
+v01118F70_0 .net *"_s60", 0 0, L_0111A110; 1 drivers
+v01118D60_0 .net *"_s62", 0 0, L_0111A458; 1 drivers
+v01119128_0 .net *"_s64", 0 0, L_0111A340; 1 drivers
+v011191D8_0 .net *"_s68", 0 0, L_0111A180; 1 drivers
+v01118E68_0 .net *"_s70", 0 0, L_0111A7A0; 1 drivers
+v01118EC0_0 .net *"_s8", 0 0, L_01119E18; 1 drivers
+L_01119498 .part/pv L_01119F68, 7, 1, 8;
+L_01119548 .part/pv L_01119DA8, 6, 1, 8;
+L_011195F8 .part/pv L_0111A6C0, 5, 1, 8;
+L_01119650 .part/pv L_0111A570, 4, 1, 8;
+L_01118E10 .part/pv L_0111A4C8, 3, 1, 8;
+L_011196A8 .part/pv L_0111A228, 2, 1, 8;
+L_01118DB8 .part/pv L_0111A340, 1, 1, 8;
+L_01119B78 .part/pv L_0111A7A0, 0, 1, 8;
+    .scope S_011DDFE8;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "Decoder_3X8.vcd";
+    %vpi_call 2 13 "$dumpvars", 1'sb0, S_011DDFE8;
+    %end;
+    .thread T_0;
+    .scope S_011DDFE8;
+T_1 ;
+    %vpi_call 2 18 "$display", "---------------------------";
+    %vpi_call 2 19 "$display", " C | A | B ||  I[0:7]";
+    %vpi_call 2 20 "$display", "---------------------------";
+    %vpi_call 2 22 "$monitor", " %b | %b | %b || %b ", v01119390_0, v01119288_0, v011192E0_0, v01118F18_0;
+    %set/v v01119288_0, 0, 1;
+    %set/v v011192E0_0, 0, 1;
+    %set/v v01119390_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 0, 1;
+    %set/v v011192E0_0, 0, 1;
+    %set/v v01119390_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 0, 1;
+    %set/v v011192E0_0, 1, 1;
+    %set/v v01119390_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 0, 1;
+    %set/v v011192E0_0, 1, 1;
+    %set/v v01119390_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 1, 1;
+    %set/v v011192E0_0, 0, 1;
+    %set/v v01119390_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 1, 1;
+    %set/v v011192E0_0, 0, 1;
+    %set/v v01119390_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 1, 1;
+    %set/v v011192E0_0, 1, 1;
+    %set/v v01119390_0, 0, 1;
+    %delay 10, 0;
+    %set/v v01119288_0, 1, 1;
+    %set/v v011192E0_0, 1, 1;
+    %set/v v01119390_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 31 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Decoder_3X8_Tb.v";
+    "./Decoder_3X8.v";

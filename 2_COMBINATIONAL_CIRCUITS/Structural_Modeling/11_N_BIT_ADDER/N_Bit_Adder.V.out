@@ -1,0 +1,121 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_011F9AE0 .scope module, "N_Bit_Adder" "N_Bit_Adder" 2 4;
+ .timescale 0 0;
+P_011FBA74 .param/l "N" 2 6, +C4<0100>;
+L_011070D0 .functor BUFZ 1, C4<z>, C4<0>, C4<0>, C4<0>;
+v010E0B20_0 .net "A", 3 0, C4<zzzz>; 0 drivers
+v010E06A8_0 .net "B", 3 0, C4<zzzz>; 0 drivers
+RS_010E431C/0/0 .resolv tri, L_010E0C80, L_010E1200, L_010E12B0, L_010E1308;
+RS_010E431C/0/4 .resolv tri, L_01108AC0, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_010E431C .resolv tri, RS_010E431C/0/0, RS_010E431C/0/4, C4<zzzzz>, C4<zzzzz>;
+v010E07B0_0 .net8 "C", 4 0, RS_010E431C; 5 drivers
+v010E0808_0 .net "C_IN", 0 0, C4<z>; 0 drivers
+v010E0860_0 .net "C_OUT", 0 0, L_01108B18; 1 drivers
+RS_010E4364 .resolv tri, L_010E0BD0, L_010E0E38, L_010E1150, L_010E1468;
+v010E08B8_0 .net8 "SUM", 3 0, RS_010E4364; 4 drivers
+v010E0B78_0 .net *"_s31", 0 0, L_011070D0; 1 drivers
+L_010E0BD0 .part/pv L_011F38E0, 0, 1, 4;
+L_010E0C80 .part/pv L_011F3950, 1, 1, 5;
+L_010E0DE0 .part C4<zzzz>, 0, 1;
+L_010E0CD8 .part C4<zzzz>, 0, 1;
+L_010E0D30 .part RS_010E431C, 0, 1;
+L_010E0E38 .part/pv L_01106DA0, 1, 1, 4;
+L_010E1200 .part/pv L_01106DD8, 2, 1, 5;
+L_010E10F8 .part C4<zzzz>, 1, 1;
+L_010E1258 .part C4<zzzz>, 1, 1;
+L_010E1410 .part RS_010E431C, 1, 1;
+L_010E1150 .part/pv L_01107488, 2, 1, 4;
+L_010E12B0 .part/pv L_011071B0, 3, 1, 5;
+L_010E13B8 .part C4<zzzz>, 2, 1;
+L_010E11A8 .part C4<zzzz>, 2, 1;
+L_010E1360 .part RS_010E431C, 2, 1;
+L_010E1468 .part/pv L_011073E0, 3, 1, 4;
+L_010E1308 .part/pv L_011076B8, 4, 1, 5;
+L_010E0FF0 .part C4<zzzz>, 3, 1;
+L_010E10A0 .part C4<zzzz>, 3, 1;
+L_010E1048 .part RS_010E431C, 3, 1;
+L_01108AC0 .part/pv L_011070D0, 0, 1, 5;
+L_01108B18 .part RS_010E431C, 4, 1;
+S_011F9948 .scope generate, "FA_Chain[0]" "FA_Chain[0]" 2 15, 2 15, S_011F9AE0;
+ .timescale 0 0;
+P_011FBAF4 .param/l "i" 2 15, +C4<00>;
+S_011F9508 .scope module, "FA" "Full_Adder" 2 16, 3 1, S_011F9948;
+ .timescale 0 0;
+L_011FC328 .functor XOR 1, L_010E0DE0, L_010E0CD8, C4<0>, C4<0>;
+L_011FB1A8 .functor AND 1, L_010E0DE0, L_010E0CD8, C4<1>, C4<1>;
+L_011F3870 .functor AND 1, L_011FC328, L_010E0D30, C4<1>, C4<1>;
+L_011F38E0 .functor XOR 1, L_011FC328, L_010E0D30, C4<0>, C4<0>;
+L_011F3950 .functor OR 1, L_011FB1A8, L_011F3870, C4<0>, C4<0>;
+v010E0F98_0 .net "A", 0 0, L_010E0DE0; 1 drivers
+v010E04F0_0 .net "B", 0 0, L_010E0CD8; 1 drivers
+v010E0968_0 .net "c_in", 0 0, L_010E0D30; 1 drivers
+v010E0A18_0 .net "c_out", 0 0, L_011F3950; 1 drivers
+v010E0A70_0 .net "sum", 0 0, L_011F38E0; 1 drivers
+v010E0548_0 .net "w0", 0 0, L_011FC328; 1 drivers
+v010E0AC8_0 .net "w1", 0 0, L_011FB1A8; 1 drivers
+v010E0650_0 .net "w2", 0 0, L_011F3870; 1 drivers
+S_011F9E98 .scope generate, "FA_Chain[1]" "FA_Chain[1]" 2 15, 2 15, S_011F9AE0;
+ .timescale 0 0;
+P_011FBBF4 .param/l "i" 2 15, +C4<01>;
+S_011F9B68 .scope module, "FA" "Full_Adder" 2 16, 3 1, S_011F9E98;
+ .timescale 0 0;
+L_011F47C8 .functor XOR 1, L_010E10F8, L_010E1258, C4<0>, C4<0>;
+L_011F4800 .functor AND 1, L_010E10F8, L_010E1258, C4<1>, C4<1>;
+L_01106CC0 .functor AND 1, L_011F47C8, L_010E1410, C4<1>, C4<1>;
+L_01106DA0 .functor XOR 1, L_011F47C8, L_010E1410, C4<0>, C4<0>;
+L_01106DD8 .functor OR 1, L_011F4800, L_01106CC0, C4<0>, C4<0>;
+v010E0700_0 .net "A", 0 0, L_010E10F8; 1 drivers
+v010E0910_0 .net "B", 0 0, L_010E1258; 1 drivers
+v010E0758_0 .net "c_in", 0 0, L_010E1410; 1 drivers
+v010E09C0_0 .net "c_out", 0 0, L_01106DD8; 1 drivers
+v010E0D88_0 .net "sum", 0 0, L_01106DA0; 1 drivers
+v010E0F40_0 .net "w0", 0 0, L_011F47C8; 1 drivers
+v010E05F8_0 .net "w1", 0 0, L_011F4800; 1 drivers
+v010E0E90_0 .net "w2", 0 0, L_01106CC0; 1 drivers
+S_011F9040 .scope generate, "FA_Chain[2]" "FA_Chain[2]" 2 15, 2 15, S_011F9AE0;
+ .timescale 0 0;
+P_011FBB54 .param/l "i" 2 15, +C4<010>;
+S_011F92E8 .scope module, "FA" "Full_Adder" 2 16, 3 1, S_011F9040;
+ .timescale 0 0;
+L_01106C88 .functor XOR 1, L_010E13B8, L_010E11A8, C4<0>, C4<0>;
+L_01106FD0 .functor AND 1, L_010E13B8, L_010E11A8, C4<1>, C4<1>;
+L_01107680 .functor AND 1, L_01106C88, L_010E1360, C4<1>, C4<1>;
+L_01107488 .functor XOR 1, L_01106C88, L_010E1360, C4<0>, C4<0>;
+L_011071B0 .functor OR 1, L_01106FD0, L_01107680, C4<0>, C4<0>;
+v011FCFF0_0 .net "A", 0 0, L_010E13B8; 1 drivers
+v011FCD30_0 .net "B", 0 0, L_010E11A8; 1 drivers
+v011FD048_0 .net "c_in", 0 0, L_010E1360; 1 drivers
+v011FCD88_0 .net "c_out", 0 0, L_011071B0; 1 drivers
+v011FD200_0 .net "sum", 0 0, L_01107488; 1 drivers
+v010E0EE8_0 .net "w0", 0 0, L_01106C88; 1 drivers
+v010E0C28_0 .net "w1", 0 0, L_01106FD0; 1 drivers
+v010E05A0_0 .net "w2", 0 0, L_01107680; 1 drivers
+S_011F98C0 .scope generate, "FA_Chain[3]" "FA_Chain[3]" 2 15, 2 15, S_011F9AE0;
+ .timescale 0 0;
+P_011FB9D4 .param/l "i" 2 15, +C4<011>;
+S_011F8FB8 .scope module, "FA" "Full_Adder" 2 16, 3 1, S_011F98C0;
+ .timescale 0 0;
+L_01107220 .functor XOR 1, L_010E0FF0, L_010E10A0, C4<0>, C4<0>;
+L_011075D8 .functor AND 1, L_010E0FF0, L_010E10A0, C4<1>, C4<1>;
+L_011072C8 .functor AND 1, L_01107220, L_010E1048, C4<1>, C4<1>;
+L_011073E0 .functor XOR 1, L_01107220, L_010E1048, C4<0>, C4<0>;
+L_011076B8 .functor OR 1, L_011075D8, L_011072C8, C4<0>, C4<0>;
+v011FCC80_0 .net "A", 0 0, L_010E0FF0; 1 drivers
+v011FD2B0_0 .net "B", 0 0, L_010E10A0; 1 drivers
+v011FCCD8_0 .net "c_in", 0 0, L_010E1048; 1 drivers
+v011FCF40_0 .net "c_out", 0 0, L_011076B8; 1 drivers
+v011FD150_0 .net "sum", 0 0, L_011073E0; 1 drivers
+v011FD3B8_0 .net "w0", 0 0, L_01107220; 1 drivers
+v011FD1A8_0 .net "w1", 0 0, L_011075D8; 1 drivers
+v011FCDE0_0 .net "w2", 0 0, L_011072C8; 1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "N_Bit_Adder.V";
+    "./Full_Adder.v";

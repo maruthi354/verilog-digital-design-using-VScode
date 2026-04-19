@@ -1,0 +1,61 @@
+$date
+	Wed Apr 15 18:33:47 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module G_To_B_Tb $end
+$var wire 3 ! O [2:0] $end
+$var reg 3 " I [2:0] $end
+$scope module dut $end
+$var wire 3 # G [2:0] $end
+$var reg 3 $ B [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b1 !
+b1 $
+b1 "
+b1 #
+#20
+b10 !
+b10 $
+b11 "
+b11 #
+#30
+b11 !
+b11 $
+b10 "
+b10 #
+#40
+b100 $
+b100 !
+b110 "
+b110 #
+#50
+b101 !
+b101 $
+b111 "
+b111 #
+#60
+b110 !
+b110 $
+b101 "
+b101 #
+#70
+b111 !
+b111 $
+b100 "
+b100 #
+#80

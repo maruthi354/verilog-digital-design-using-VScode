@@ -1,0 +1,152 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0117C988 .scope module, "N_Bit_Adder_Tb" "N_Bit_Adder_Tb" 2 3;
+ .timescale 0 0;
+P_011A27AC .param/l "N" 2 5, +C4<0100>;
+v011B0408_0 .var "A", 3 0;
+v011B0B98_0 .var "B", 3 0;
+v011B0460_0 .net "CARRY", 0 0, L_011DE0B8; 1 drivers
+v011B04B8_0 .var "C_IN", 0 0;
+RS_011B434C .resolv tri, L_011B0510, L_011B06C8, L_011B0988, L_011DE270;
+v011B07D0_0 .net8 "SUM", 3 0, RS_011B434C; 4 drivers
+S_0117CBA8 .scope module, "dut" "N_Bit_Adder" 2 11, 3 4, S_0117C988;
+ .timescale 0 0;
+P_011A262C .param/l "N" 3 6, +C4<0100>;
+L_011DCEF0 .functor BUFZ 1, v011B04B8_0, C4<0>, C4<0>, C4<0>;
+v011B0D50_0 .net "A", 3 0, v011B0408_0; 1 drivers
+v011B0300_0 .net "B", 3 0, v011B0B98_0; 1 drivers
+RS_011B4304/0/0 .resolv tri, L_011B0880, L_011B0720, L_011B09E0, L_011DE008;
+RS_011B4304/0/4 .resolv tri, L_011DDF58, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_011B4304 .resolv tri, RS_011B4304/0/0, RS_011B4304/0/4, C4<zzzzz>, C4<zzzzz>;
+v011B0358_0 .net8 "C", 4 0, RS_011B4304; 5 drivers
+v011B0568_0 .net "C_IN", 0 0, v011B04B8_0; 1 drivers
+v011B03B0_0 .alias "C_OUT", 0 0, v011B0460_0;
+v011B0BF0_0 .alias "SUM", 3 0, v011B07D0_0;
+v011B08D8_0 .net *"_s31", 0 0, L_011DCEF0; 1 drivers
+L_011B0510 .part/pv L_011A4CA8, 0, 1, 4;
+L_011B0880 .part/pv L_011A4D18, 1, 1, 5;
+L_011B05C0 .part v011B0408_0, 0, 1;
+L_011B0618 .part v011B0B98_0, 0, 1;
+L_011B0670 .part RS_011B4304, 0, 1;
+L_011B06C8 .part/pv L_011B12E0, 1, 1, 4;
+L_011B0720 .part/pv L_011B1510, 2, 1, 5;
+L_011B0778 .part v011B0408_0, 1, 1;
+L_011B0828 .part v011B0B98_0, 1, 1;
+L_011B0930 .part RS_011B4304, 1, 1;
+L_011B0988 .part/pv L_011DD040, 2, 1, 4;
+L_011B09E0 .part/pv L_011DCF28, 3, 1, 5;
+L_011B0A38 .part v011B0408_0, 2, 1;
+L_011B0A90 .part v011B0B98_0, 2, 1;
+L_011B0AE8 .part RS_011B4304, 2, 1;
+L_011DE270 .part/pv L_011DCF60, 3, 1, 4;
+L_011DE008 .part/pv L_011DCC50, 4, 1, 5;
+L_011DE378 .part v011B0408_0, 3, 1;
+L_011DE060 .part v011B0B98_0, 3, 1;
+L_011DE3D0 .part RS_011B4304, 3, 1;
+L_011DDF58 .part/pv L_011DCEF0, 0, 1, 5;
+L_011DE0B8 .part RS_011B4304, 4, 1;
+S_0117CA98 .scope generate, "FA_Chain[0]" "FA_Chain[0]" 3 20, 3 20, S_0117CBA8;
+ .timescale 0 0;
+P_011A268C .param/l "i" 3 20, +C4<00>;
+S_0117CCB8 .scope module, "FA" "Full_Adder" 3 21, 4 1, S_0117CA98;
+ .timescale 0 0;
+L_0117DE50 .functor XOR 1, L_011B05C0, L_011B0618, C4<0>, C4<0>;
+L_01174F10 .functor AND 1, L_011B05C0, L_011B0618, C4<1>, C4<1>;
+L_0117EE08 .functor AND 1, L_0117DE50, L_011B0670, C4<1>, C4<1>;
+L_011A4CA8 .functor XOR 1, L_0117DE50, L_011B0670, C4<0>, C4<0>;
+L_011A4D18 .functor OR 1, L_01174F10, L_0117EE08, C4<0>, C4<0>;
+v011B1068_0 .net "A", 0 0, L_011B05C0; 1 drivers
+v011B1118_0 .net "B", 0 0, L_011B0618; 1 drivers
+v011B1170_0 .net "c_in", 0 0, L_011B0670; 1 drivers
+v011B0C48_0 .net "c_out", 0 0, L_011A4D18; 1 drivers
+v011B0CA0_0 .net "sum", 0 0, L_011A4CA8; 1 drivers
+v011B0B40_0 .net "w0", 0 0, L_0117DE50; 1 drivers
+v011B02A8_0 .net "w1", 0 0, L_01174F10; 1 drivers
+v011B0CF8_0 .net "w2", 0 0, L_0117EE08; 1 drivers
+S_0117C7F0 .scope generate, "FA_Chain[1]" "FA_Chain[1]" 3 20, 3 20, S_0117CBA8;
+ .timescale 0 0;
+P_011A272C .param/l "i" 3 20, +C4<01>;
+S_0117CA10 .scope module, "FA" "Full_Adder" 3 21, 4 1, S_0117C7F0;
+ .timescale 0 0;
+L_011B1628 .functor XOR 1, L_011B0778, L_011B0828, C4<0>, C4<0>;
+L_011B1548 .functor AND 1, L_011B0778, L_011B0828, C4<1>, C4<1>;
+L_011B15B8 .functor AND 1, L_011B1628, L_011B0930, C4<1>, C4<1>;
+L_011B12E0 .functor XOR 1, L_011B1628, L_011B0930, C4<0>, C4<0>;
+L_011B1510 .functor OR 1, L_011B1548, L_011B15B8, C4<0>, C4<0>;
+v011B1220_0 .net "A", 0 0, L_011B0778; 1 drivers
+v011B0E58_0 .net "B", 0 0, L_011B0828; 1 drivers
+v011B0EB0_0 .net "c_in", 0 0, L_011B0930; 1 drivers
+v011B0F08_0 .net "c_out", 0 0, L_011B1510; 1 drivers
+v011B10C0_0 .net "sum", 0 0, L_011B12E0; 1 drivers
+v011B0F60_0 .net "w0", 0 0, L_011B1628; 1 drivers
+v011B0FB8_0 .net "w1", 0 0, L_011B1548; 1 drivers
+v011B1010_0 .net "w2", 0 0, L_011B15B8; 1 drivers
+S_0117D428 .scope generate, "FA_Chain[2]" "FA_Chain[2]" 3 20, 3 20, S_0117CBA8;
+ .timescale 0 0;
+P_011A27EC .param/l "i" 3 20, +C4<010>;
+S_0117CC30 .scope module, "FA" "Full_Adder" 3 21, 4 1, S_0117D428;
+ .timescale 0 0;
+L_011B15F0 .functor XOR 1, L_011B0A38, L_011B0A90, C4<0>, C4<0>;
+L_011B1388 .functor AND 1, L_011B0A38, L_011B0A90, C4<1>, C4<1>;
+L_011DD2A8 .functor AND 1, L_011B15F0, L_011B0AE8, C4<1>, C4<1>;
+L_011DD040 .functor XOR 1, L_011B15F0, L_011B0AE8, C4<0>, C4<0>;
+L_011DCF28 .functor OR 1, L_011B1388, L_011DD2A8, C4<0>, C4<0>;
+v011A1C60_0 .net "A", 0 0, L_011B0A38; 1 drivers
+v011A1FD0_0 .net "B", 0 0, L_011B0A90; 1 drivers
+v011A1D10_0 .net "c_in", 0 0, L_011B0AE8; 1 drivers
+v011A1DC0_0 .net "c_out", 0 0, L_011DCF28; 1 drivers
+v011A1E18_0 .net "sum", 0 0, L_011DD040; 1 drivers
+v011B0DA8_0 .net "w0", 0 0, L_011B15F0; 1 drivers
+v011B11C8_0 .net "w1", 0 0, L_011B1388; 1 drivers
+v011B0E00_0 .net "w2", 0 0, L_011DD2A8; 1 drivers
+S_0117D3A0 .scope generate, "FA_Chain[3]" "FA_Chain[3]" 3 20, 3 20, S_0117CBA8;
+ .timescale 0 0;
+P_011A25EC .param/l "i" 3 20, +C4<011>;
+S_0117CDC8 .scope module, "FA" "Full_Adder" 3 21, 4 1, S_0117D3A0;
+ .timescale 0 0;
+L_011DD078 .functor XOR 1, L_011DE378, L_011DE060, C4<0>, C4<0>;
+L_011DD008 .functor AND 1, L_011DE378, L_011DE060, C4<1>, C4<1>;
+L_011DD238 .functor AND 1, L_011DD078, L_011DE3D0, C4<1>, C4<1>;
+L_011DCF60 .functor XOR 1, L_011DD078, L_011DE3D0, C4<0>, C4<0>;
+L_011DCC50 .functor OR 1, L_011DD008, L_011DD238, C4<0>, C4<0>;
+v011A1CB8_0 .net "A", 0 0, L_011DE378; 1 drivers
+v011A19F8_0 .net "B", 0 0, L_011DE060; 1 drivers
+v011A18F0_0 .net "c_in", 0 0, L_011DE3D0; 1 drivers
+v011A1E70_0 .net "c_out", 0 0, L_011DCC50; 1 drivers
+v011A1A50_0 .net "sum", 0 0, L_011DCF60; 1 drivers
+v011A1F78_0 .net "w0", 0 0, L_011DD078; 1 drivers
+v011A1B00_0 .net "w1", 0 0, L_011DD008; 1 drivers
+v011A1C08_0 .net "w2", 0 0, L_011DD238; 1 drivers
+    .scope S_0117C988;
+T_0 ;
+    %vpi_call 2 14 "$monitor", $time, " A = %b, B = %b, Sum = %b , Carry = %b", v011B0408_0, v011B0B98_0, v011B07D0_0, v011B0460_0;
+    %vpi_call 2 15 "$dumpfile", "N_Bit_Adder.vcd";
+    %vpi_call 2 16 "$dumpvars", 1'sb0, S_0117C988;
+    %end;
+    .thread T_0;
+    .scope S_0117C988;
+T_1 ;
+    %set/v v011B04B8_0, 0, 1;
+    %movi 8, 11, 4;
+    %set/v v011B0408_0, 8, 4;
+    %movi 8, 5, 4;
+    %set/v v011B0B98_0, 8, 4;
+    %delay 10, 0;
+    %set/v v011B0408_0, 1, 4;
+    %movi 8, 10, 4;
+    %set/v v011B0B98_0, 8, 4;
+    %delay 10, 0;
+    %vpi_call 2 27 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "N_Bit_Adder_Tb.v";
+    "./N_Bit_Adder.v";
+    "./Full_Adder.v";

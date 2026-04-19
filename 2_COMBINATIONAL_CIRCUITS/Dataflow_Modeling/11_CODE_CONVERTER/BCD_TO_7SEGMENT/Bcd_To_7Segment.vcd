@@ -1,0 +1,128 @@
+$date
+	Wed Apr 15 18:40:19 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Bcd_To_7Segment_Tb $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$var wire 1 $ d $end
+$var wire 1 % e $end
+$var wire 1 & f $end
+$var wire 1 ' g $end
+$var reg 1 ( A $end
+$var reg 1 ) B $end
+$var reg 1 * C $end
+$var reg 1 + D $end
+$scope module dut $end
+$var wire 1 , A $end
+$var wire 1 - B $end
+$var wire 1 . C $end
+$var wire 1 / D $end
+$var wire 1 ! a $end
+$var wire 1 " b $end
+$var wire 1 # c $end
+$var wire 1 $ d $end
+$var wire 1 % e $end
+$var wire 1 & f $end
+$var wire 1 ' g $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+0(
+0'
+1&
+1%
+1$
+1#
+1"
+1!
+$end
+#10
+0$
+0!
+0%
+0&
+1+
+1/
+#20
+1!
+0#
+1$
+1'
+1%
+1*
+1.
+0+
+0/
+#30
+0%
+1#
+1+
+1/
+#40
+0$
+0!
+1&
+1#
+1)
+1-
+0*
+0.
+0+
+0/
+#50
+0"
+1!
+1$
+1+
+1/
+#60
+1%
+1!
+1$
+1*
+1.
+0+
+0/
+#70
+0$
+0&
+0%
+0'
+1"
+1+
+1/
+#80
+1$
+1'
+1%
+1&
+1"
+1(
+1,
+0)
+0-
+0*
+0.
+0+
+0/
+#90
+0%
+1+
+1/
+#100

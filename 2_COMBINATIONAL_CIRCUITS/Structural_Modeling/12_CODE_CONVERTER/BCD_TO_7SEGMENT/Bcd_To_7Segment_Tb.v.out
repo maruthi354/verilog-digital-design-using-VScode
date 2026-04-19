@@ -1,0 +1,146 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01268BE8 .scope module, "Bcd_To_7Segment_Tb" "Bcd_To_7Segment_Tb" 2 3;
+ .timescale 0 0;
+v010E0468_0 .var "A", 0 0;
+v010DFCD8_0 .var "B", 0 0;
+v010E0200_0 .var "C", 0 0;
+v010DFFF0_0 .var "D", 0 0;
+v010DFF98_0 .net "a", 0 0, L_010E0CD8; 1 drivers
+v010DFDE0_0 .net "b", 0 0, L_010E0C68; 1 drivers
+v010DF9C0_0 .net "c", 0 0, L_010E0DB8; 1 drivers
+v010DFA18_0 .net "d", 0 0, L_010E0A00; 1 drivers
+v010DFD30_0 .net "e", 0 0, L_010E0ED0; 1 drivers
+v010E02B0_0 .net "f", 0 0, L_010E0A70; 1 drivers
+v010E0048_0 .net "g", 0 0, L_010E0CA0; 1 drivers
+S_012680C0 .scope module, "dut" "Bcd_To_7Segment" 2 8, 3 12, S_01268BE8;
+ .timescale 0 0;
+L_0126E2C0 .functor NOT 1, v010DFCD8_0, C4<0>, C4<0>, C4<0>;
+L_0126E448 .functor NOT 1, v010E0200_0, C4<0>, C4<0>, C4<0>;
+L_0126E528 .functor NOT 1, v010DFFF0_0, C4<0>, C4<0>, C4<0>;
+L_0126E2F8 .functor AND 1, L_0126E2C0, L_0126E528, C4<1>, C4<1>;
+L_0126E288 .functor AND 1, v010DFCD8_0, v010DFFF0_0, C4<1>, C4<1>;
+L_010E1058 .functor AND 1, v010DFCD8_0, L_0126E528, C4<1>, C4<1>;
+L_010E0DF0 .functor AND 1, v010E0200_0, v010DFFF0_0, C4<1>, C4<1>;
+L_010E0B88 .functor AND 1, L_0126E448, L_0126E528, C4<1>, C4<1>;
+L_010E0D10 .functor AND 1, v010E0200_0, L_0126E528, C4<1>, C4<1>;
+L_010E0B50 .functor AND 1, v010DFCD8_0, L_0126E448, v010DFFF0_0, C4<1>;
+L_010E0D48 .functor AND 1, L_0126E2C0, v010E0200_0, C4<1>, C4<1>;
+L_010E1020 .functor AND 1, v010DFCD8_0, L_0126E448, C4<1>, C4<1>;
+L_010E0CD8 .functor OR 1, v010E0468_0, v010E0200_0, L_0126E2F8, L_0126E288;
+L_010E0C68 .functor OR 1, L_0126E2C0, L_010E0DF0, L_010E0B88, C4<0>;
+L_010E0DB8 .functor OR 1, v010DFCD8_0, L_0126E448, v010DFFF0_0, C4<0>;
+L_010E0A00/0/0 .functor OR 1, v010E0468_0, L_010E0D48, L_0126E2F8, L_010E0D10;
+L_010E0A00/0/4 .functor OR 1, L_010E0B50, C4<0>, C4<0>, C4<0>;
+L_010E0A00 .functor OR 1, L_010E0A00/0/0, L_010E0A00/0/4, C4<0>, C4<0>;
+L_010E0ED0 .functor OR 1, L_0126E2F8, L_010E0D10, C4<0>, C4<0>;
+L_010E0A70 .functor OR 1, v010E0468_0, L_010E1020, L_010E1058, L_010E0B88;
+L_010E0CA0 .functor OR 1, v010E0468_0, L_010E1020, L_010E0D48, L_010E1058;
+v010E2E20_0 .net "A", 0 0, v010E0468_0; 1 drivers
+v010E0938_0 .net "B", 0 0, v010DFCD8_0; 1 drivers
+v010E04C0_0 .net "B_n", 0 0, L_0126E2C0; 1 drivers
+v010E0518_0 .net "C", 0 0, v010E0200_0; 1 drivers
+v010E06D0_0 .net "C_n", 0 0, L_0126E448; 1 drivers
+v010E07D8_0 .net "D", 0 0, v010DFFF0_0; 1 drivers
+v010E0570_0 .net "D_n", 0 0, L_0126E528; 1 drivers
+v010E0620_0 .alias "a", 0 0, v010DFF98_0;
+v010E0728_0 .alias "b", 0 0, v010DFDE0_0;
+v010E0678_0 .alias "c", 0 0, v010DF9C0_0;
+v010E0780_0 .alias "d", 0 0, v010DFA18_0;
+v010E05C8_0 .alias "e", 0 0, v010DFD30_0;
+v010E0830_0 .alias "f", 0 0, v010E02B0_0;
+v010E0888_0 .alias "g", 0 0, v010E0048_0;
+v010E08E0_0 .net "w0", 0 0, L_0126E2F8; 1 drivers
+v010DFB78_0 .net "w1", 0 0, L_0126E288; 1 drivers
+v010E0410_0 .net "w2", 0 0, L_010E1058; 1 drivers
+v010E0360_0 .net "w3", 0 0, L_010E0DF0; 1 drivers
+v010E0150_0 .net "w4", 0 0, L_010E0B88; 1 drivers
+v010E03B8_0 .net "w5", 0 0, L_010E0D10; 1 drivers
+v010E01A8_0 .net "w6", 0 0, L_010E0B50; 1 drivers
+v010DFC80_0 .net "w7", 0 0, L_010E0D48; 1 drivers
+v010E0258_0 .net "w8", 0 0, L_010E1020; 1 drivers
+    .scope S_01268BE8;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "Bcd_To_7Segment.vcd";
+    %vpi_call 2 12 "$dumpvars", 1'sb0, S_01268BE8;
+    %end;
+    .thread T_0;
+    .scope S_01268BE8;
+T_1 ;
+    %vpi_call 2 18 "$display", "---------------------------------------------";
+    %vpi_call 2 19 "$display", " A | B | C | D || a | b | c | d | e | f | g ";
+    %vpi_call 2 20 "$display", "---------------------------------------------";
+    %vpi_call 2 22 "$monitor", " %b | %b | %b | %b || %b | %b | %b | %b | %b |  %b | %b  ", v010E0468_0, v010DFCD8_0, v010E0200_0, v010DFFF0_0, v010DFF98_0, v010DFDE0_0, v010DF9C0_0, v010DFA18_0, v010DFD30_0, v010E02B0_0, v010E0048_0;
+    %set/v v010DFFF0_0, 0, 1;
+    %set/v v010E0200_0, 0, 1;
+    %set/v v010DFCD8_0, 0, 1;
+    %set/v v010E0468_0, 0, 1;
+    %delay 10, 0;
+    %movi 8, 1, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 2, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 3, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 4, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 5, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 6, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 7, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 8, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %movi 8, 9, 4;
+    %set/v v010DFFF0_0, 8, 1;
+    %set/v v010E0200_0, 9, 1;
+    %set/v v010DFCD8_0, 10, 1;
+    %set/v v010E0468_0, 11, 1;
+    %delay 10, 0;
+    %vpi_call 2 34 "$display", "---------------------------------------------";
+    %vpi_call 2 35 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Bcd_To_7Segment_Tb.v";
+    "./Bcd_To_7Segment.v";
